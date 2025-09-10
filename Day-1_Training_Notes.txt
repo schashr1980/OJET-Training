@@ -1,0 +1,32 @@
+1. List of protocal and Port to communicate across network machines.
+2. How the remote machines get connected.
+3. Client server model.
+4. HTML, CSS, JAVA scripts introduction
+4. MVC architecture basics.
+
+
+C:\Users\Chandra Shaker S\Oracle Content\Trainings\Ojet
+
+
+JS code 
+// Online Javascript Editor for free
+// Write, Edit and Run your Javascript code using JS Online let 
+arr = ["chandra", 50, true, null, 45];
+//for ( let i = 0; i<arr.length; i++)
+//{
+//    console.log(arr[i]);
+//}
+
+// Print array value
+//arr.forEach(value => console.log(value));
+
+// Print only number
+//arr.filter(e=>typeof e === 'number')
+//.forEach(e=>console.log(e));
+
+// Map is used to multiply array values
+arr.filter(e => typeof e === 'number')
+.map(e=>e*2)
+.forEach(e=> console.log(e));
+
+
