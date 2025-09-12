@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!-- Problem-1: create a small Knockout.js application with the following functionality
+-> A text input where the user types a message.
+-> A heading(e.g., <h1>) that updates in real time as uer types. -->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Knockout Problem -1 </title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
+    </head>
+    <body>
+        <h1>TextBox Value: <span data-bind="text: labelvalue"></span></h1>
+        <!-- <h1 data-bind="text: labelvalue"></h1> -->
+         <input type="text"  data-bind="value: labelvalue, valueUpdate: 'input'">
+        <script>
+            // VIEWMODEL
+            function AppViewModel() {
+                this.labelvalue = ko.observable("");
+            }
+            // Activates knockout.js
+            ko.applyBindings(AppViewModel());
+        </script>
+
+    </body>
+</html>

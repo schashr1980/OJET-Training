@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!-- Problem-2: Build a Knockout.js To-Do_list application that allows the user to
+-> Add new tasks(string)
+-> Display a list of all tasks
+-> Remove any task by clicking a "Remove" button next to each task -->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Knockout Problem -1 </title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
+    </head>
+    <body>
+        <input type="text" data-bind="value: newTask, valueUpdate: 'afterkeydown'" placeholder="New task" />
+        <button data-bind="click: addTask">Add Task</button>
+        <ul data-bind="foreach: tasks">
+            <li>
+                <span data-bind="text: string1"></span>
+                <button data-bind="click: $parent.removeTask.bind($parent, $data)">Remove Task</button>
+            </li>
+        </ul>
+        <script>
+            // function Task(value) {
+            //     this.string1 = ko.observable(value);
+            // }
+            class Task {
+                constructor(value) {
+                    this.string1 = ko.observable(value);
+                }
+            }
+            // VIEWMODEL
+            function AppViewModel() {
+                this.tasks = ko.observableArray([]);
+                this.newTask = ko.observable("");
+                this.addTask = () => {
+                    if (this.newTask()) {
+                        this.tasks.push(new Task(this.newTask()));
+                        this.newTask("");
+                    }
+                }
+                this.removeTask = () => {
+                     this.tasks.remove(task);
+                    // if (this.newTask()) {
+                    //     this.tasks.remove(task);
+                    // }
+                }
+            }
+            // Activates knockout.js
+            ko.applyBindings(AppViewModel());
+        </script>
+
+    </body>
+</html>

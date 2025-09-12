@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!-- Problem-1: create a small Knockout.js application with the following functionality
+-> A text input where the user types a message.
+-> A heading(e.g., <h1>) that updates in real time as uer types. -->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Knockout Problem -1 </title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
+    </head>
+    <body>
+        <input type="number"  placeholder="Price"    data-bind="value: price, valueUpdate: 'input'">
+        <input type="number" placeholder="Quantity" data-bind="value: quantity, valueUpdate: 'input'">
+        <h1>Total: <span data-bind="text: total"></span></h1>
+
+        <script>
+            // VIEWMODEL
+            function AppViewModel() {
+                this.price = ko.observable("");
+                this.quantity = ko.observable("");
+                this.total = ko.computed(function() {
+                    // Parse as floats to handle empty or invalid input
+                    var p = parseFloat(this.price()) || 0;
+                    var q = parseFloat(this.quantity()) || 0;
+                    return p * q;  }
+                );
+            }
+            // Activates knockout.js
+            ko.applyBindings(AppViewModel());
+        </script>
+
+    </body>
+</html>
