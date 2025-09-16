@@ -1,0 +1,18 @@
+<!--
+ Copyright (c) 2014, 2025, Oracle and/or its affiliates.
+ Licensed under The Universal Permissive License (UPL), Version 1.0
+ as shown at https://oss.oracle.com/licenses/upl/
+ -->
+<div class="oj-hybrid-padding">
+  <div>
+      <h2>Validate button Task (Enable or Disabled the button) </h2>
+      <!-- // Form with two fields- name and email
+      // Enable the submit button only when both the fields are non empty -->
+      <oj-form-layout>
+        <oj-input-text id="name" label-hint="Name" raw-value="{{name}}" required></oj-input-text>
+        <oj-input-text id="email" label-hint="Email"  raw-value="{{email}}" required></oj-input-text>
+        <oj-button id="submitBtn" disabled="[[evaluateDisabled]]" on-click="[[submitHandler]]">Submit</oj-button>
+      </oj-form-layout>
+
+  </div>
+</div>
